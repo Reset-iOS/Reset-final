@@ -1,5 +1,5 @@
 //
-//  SpaceDetailViewController.swift
+//  JoinedSpaceViewController.swift
 //  Reset
 //
 //  Created by Prasanjit Panda on 18/11/24.
@@ -7,9 +7,8 @@
 
 import UIKit
 
-class SpaceDetailViewController: UIViewController{
-   
-    
+class JoinedSpaceViewController: UIViewController {
+
     @IBOutlet weak var spaceTitle: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     var space: SpacesModel? // The data to populate the details view
@@ -28,29 +27,20 @@ class SpaceDetailViewController: UIViewController{
         
     }
     
-    @IBAction func joinSpaceButtonTapped(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-           if let joinedSpaceVC = storyboard.instantiateViewController(withIdentifier: "JoinedSpaceViewController") as? JoinedSpaceViewController {
-               // Pass any required data to JoinedSpaceViewController
-               joinedSpaceVC.space = self.space
-               
-               // Set the modal presentation style if needed
-               joinedSpaceVC.modalPresentationStyle = .fullScreen
-               
-               // Present modally
-               self.present(joinedSpaceVC, animated: true, completion: nil)
-           } else {
-               print("Could not find JoinedSpaceViewController in storyboard.")
-           }
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
     }
-    
-   
-    
+    */
+
 }
 
-
-
-extension SpaceDetailViewController: UICollectionViewDataSource{
+extension JoinedSpaceViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         space?.speakers.count ?? 0
     }
@@ -78,11 +68,12 @@ extension SpaceDetailViewController: UICollectionViewDataSource{
     
 }
 
-extension SpaceDetailViewController: UICollectionViewDelegateFlowLayout{
+extension JoinedSpaceViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 60, height: 80)
     }
 }
+
 
 
 

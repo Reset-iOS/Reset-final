@@ -30,28 +30,47 @@ class PopoverViewController: UIViewController {
     }
     
     func showTextInputModal() {
-        // Present the TextInputViewController modally inside a UINavigationController
-        if let rootVC = self.presentingViewController as? HomeViewController {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if let textInputVC = storyboard.instantiateViewController(withIdentifier: "TextInputViewController") as? TextInputViewController {
-                let navigationController = UINavigationController(rootViewController: textInputVC)
-                textInputVC.modalPresentationStyle = .fullScreen
-                textInputVC.delegate = rootVC as? any TextInputViewControllerDelegate // Assign root view controller as the delegate
-                self.present(navigationController, animated: true, completion: nil)
+        if let tabBarController = self.presentingViewController as? UITabBarController {
+            for controller in tabBarController.viewControllers ?? [] {
+                if let navController = controller as? UINavigationController,
+                   let rootVC = navController.viewControllers.first as? HomeViewController {
+                    // Found HomeViewController
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    if let textInputVC = storyboard.instantiateViewController(withIdentifier: "TextInputViewController") as? TextInputViewController {
+                        let navigationController = UINavigationController(rootViewController: textInputVC)
+                        textInputVC.modalPresentationStyle = .fullScreen
+                        textInputVC.delegate = rootVC as? any TextInputViewControllerDelegate
+                        self.present(navigationController, animated: true, completion: nil)
+                    }
+                    return
+                }
             }
+            print("HomeViewController is not in any tab")
+        } else {
+            print("Presenting view controller is not UITabBarController")
         }
+
     }
     
     func showImageInputModal(){
-        // Present the TextInputViewController modally inside a UINavigationController
-        if let rootVC = self.presentingViewController as? HomeViewController {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if let imageInputVC = storyboard.instantiateViewController(withIdentifier: "ImageInputViewController") as? ImageInputViewController {
-                let navigationController = UINavigationController(rootViewController: imageInputVC)
-                imageInputVC.modalPresentationStyle = .fullScreen
-                imageInputVC.delegate = rootVC as? any ImageInputViewControllerDelegate // Assign root view controller as the delegate
-                self.present(navigationController, animated: true, completion: nil)
+        if let tabBarController = self.presentingViewController as? UITabBarController {
+            for controller in tabBarController.viewControllers ?? [] {
+                if let navController = controller as? UINavigationController,
+                   let rootVC = navController.viewControllers.first as? HomeViewController {
+                    // Found HomeViewController
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    if let imageInputVC = storyboard.instantiateViewController(withIdentifier: "ImageInputViewController") as? ImageInputViewController {
+                        let navigationController = UINavigationController(rootViewController: imageInputVC)
+                        imageInputVC.modalPresentationStyle = .fullScreen
+                        imageInputVC.delegate = rootVC as? any ImageInputViewControllerDelegate
+                        self.present(navigationController, animated: true, completion: nil)
+                    }
+                    return
+                }
             }
+            print("HomeViewController is not in any tab")
+        } else {
+            print("Presenting view controller is not UITabBarController")
         }
     }
 
