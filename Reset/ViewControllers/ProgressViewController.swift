@@ -9,8 +9,12 @@ import UIKit
 
 class ProgressViewController: UIViewController {
 
+    @IBOutlet weak var ProgressLine: UIProgressView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        ProgressLine.progress = 0.4
 
         // Do any additional setup after loading the view.
     }

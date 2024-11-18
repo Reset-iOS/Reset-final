@@ -126,10 +126,10 @@
             </objects>
             <point key="canvasLocation" x="-2432" y="261"/>
         </scene>
-        <!--View Controller-->
+        <!--Progress View Controller-->
         <scene sceneID="Xeg-bE-PWr">
             <objects>
-                <viewController id="jsw-KT-8Fs" sceneMemberID="viewController">
+                <viewController id="jsw-KT-8Fs" customClass="ProgressViewController" customModule="Reset" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Kk-ED-86z">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -219,16 +219,14 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iw4-pP-c94">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iw4-pP-c94">
                                 <rect key="frame" x="23" y="114" width="128" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLb-Ev-fpv">
-                                <rect key="frame" x="315" y="114" width="50" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLb-Ev-fpv">
+                                <rect key="frame" x="315.33333333333331" y="113.99999999999999" width="49.666666666666686" height="34.333333333333329"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <imageReference key="image" image="person.crop.circle" catalog="system" symbolScale="large"/>
@@ -237,17 +235,76 @@
                                     <segue destination="JVP-hr-b7k" kind="presentation" id="i4y-oc-poB"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4IZ-8E-Lug">
+                                <rect key="frame" x="16" y="214" width="361" height="259"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAZ-iV-TeS">
+                                        <rect key="frame" x="32" y="60" width="45" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sober Days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bk-N0-sa9">
+                                        <rect key="frame" x="31" y="122" width="105" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="P6j-cW-lhA">
+                                        <rect key="frame" x="32" y="178" width="315" height="4"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" systemColor="groupTableViewBackgroundColor"/>
+                                    </progressView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="18 days to next milestone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgu-aX-FVt">
+                                        <rect key="frame" x="32" y="215" width="198" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Grey " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Or-M3-iky">
+                                        <rect key="frame" x="31" y="24" width="41" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="underPageBackgroundColor"/>
+                                <color key="tintColor" systemColor="systemBrownColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xPT-TO-nVI"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Iw4-pP-c94" firstAttribute="leading" secondItem="xPT-TO-nVI" secondAttribute="leading" constant="23" id="6r1-pP-Ufx"/>
+                            <constraint firstItem="Iw4-pP-c94" firstAttribute="top" secondItem="eLb-Ev-fpv" secondAttribute="top" id="HGM-mZ-dp4"/>
                             <constraint firstItem="acM-Zp-Epa" firstAttribute="top" secondItem="xPT-TO-nVI" secondAttribute="top" constant="484" id="HmP-Tf-T9W"/>
                             <constraint firstItem="xPT-TO-nVI" firstAttribute="trailing" secondItem="acM-Zp-Epa" secondAttribute="trailing" constant="12" id="Trx-EK-sYg"/>
+                            <constraint firstItem="xPT-TO-nVI" firstAttribute="trailing" secondItem="4IZ-8E-Lug" secondAttribute="trailing" constant="16" id="WAX-lO-tFp"/>
                             <constraint firstItem="xPT-TO-nVI" firstAttribute="bottom" secondItem="acM-Zp-Epa" secondAttribute="bottom" constant="40" id="WpG-Ix-IOG"/>
+                            <constraint firstItem="eLb-Ev-fpv" firstAttribute="top" secondItem="xPT-TO-nVI" secondAttribute="top" constant="11" id="WuV-D9-v39"/>
+                            <constraint firstItem="4IZ-8E-Lug" firstAttribute="centerX" secondItem="acM-Zp-Epa" secondAttribute="centerX" id="bRb-TX-yvU"/>
+                            <constraint firstItem="4IZ-8E-Lug" firstAttribute="top" secondItem="2Kk-ED-86z" secondAttribute="top" constant="214" id="cUo-OV-ugl"/>
+                            <constraint firstItem="xPT-TO-nVI" firstAttribute="trailing" secondItem="eLb-Ev-fpv" secondAttribute="trailing" constant="28" id="jH7-r4-CJ0"/>
+                            <constraint firstItem="eLb-Ev-fpv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Iw4-pP-c94" secondAttribute="trailing" constant="8" symbolic="YES" id="jMT-XO-jOd"/>
                             <constraint firstItem="acM-Zp-Epa" firstAttribute="leading" secondItem="xPT-TO-nVI" secondAttribute="leading" constant="12" id="n1c-uv-JKB"/>
+                            <constraint firstAttribute="bottom" secondItem="4IZ-8E-Lug" secondAttribute="bottom" constant="379" id="rqm-xm-b9M"/>
+                            <constraint firstItem="4IZ-8E-Lug" firstAttribute="top" secondItem="Iw4-pP-c94" secondAttribute="bottom" constant="59" id="wiu-kS-fK8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZCc-g8-XxI"/>
+                    <connections>
+                        <outlet property="ProgressLine" destination="P6j-cW-lhA" id="tqS-mS-dGo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZR6-is-f9J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1091,7 +1148,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bbF-FO-2Ea">
-                                <rect key="frame" x="0.0" y="59" width="393" height="734"/>
+                                <rect key="frame" x="8" y="59" width="393" height="734"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="393" id="Wzx-C5-Xmg"/>
@@ -1696,6 +1753,9 @@
         <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="waveform" catalog="system" width="125" height="128"/>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -1708,11 +1768,17 @@
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="underPageBackgroundColor">
+            <color red="0.70980392156862748" green="0.71764705882352942" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
