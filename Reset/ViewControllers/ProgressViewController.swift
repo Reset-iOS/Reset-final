@@ -11,13 +11,26 @@ class ProgressViewController: UIViewController {
 
     @IBOutlet weak var ProgressLine: UIProgressView!
     
+    @IBOutlet weak var progressCardView: UIView!
+    @IBOutlet weak var profileButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ProgressLine.progress = 0.4
-
-        // Do any additional setup after loading the view.
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(progressCardTapped))
+        progressCardView.addGestureRecognizer(tapGesture)
+        progressCardView.isUserInteractionEnabled = true
+                
     }
+    
+    @objc func progressCardTapped() {
+            // Push LevelViewController
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if let levelViewController = storyboard.instantiateViewController(withIdentifier: "LevelsViewController") as? LevelsViewController {
+                self.navigationController?.pushViewController(levelViewController, animated: true)
+            }
+        }
+    
     
 
     /*

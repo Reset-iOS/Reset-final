@@ -38,7 +38,7 @@ class ProfileTableViewCell: UITableViewCell {
     }
     
     func configure(with user: User) {
-        profileImageView.image = UIImage(named: "shirts")
+        profileImageView.image = UIImage(named: user.profileImage)
     }
 }
 

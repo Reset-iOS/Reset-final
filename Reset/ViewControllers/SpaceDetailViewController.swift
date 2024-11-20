@@ -34,11 +34,16 @@ class SpaceDetailViewController: UIViewController{
                // Pass any required data to JoinedSpaceViewController
                joinedSpaceVC.space = self.space
                
-               // Set the modal presentation style if needed
-               joinedSpaceVC.modalPresentationStyle = .fullScreen
+               joinedSpaceVC.space = space
+               joinedSpaceVC.modalPresentationStyle = .pageSheet
+               if let sheet = joinedSpaceVC.sheetPresentationController {
+                   sheet.detents = [.medium(), .large()]
+                   sheet.prefersGrabberVisible = true
+                   sheet.prefersScrollingExpandsWhenScrolledToEdge = true
+                   sheet.prefersEdgeAttachedInCompactHeight = true
+               }
+               present(joinedSpaceVC,animated: true)
                
-               // Present modally
-               self.present(joinedSpaceVC, animated: true, completion: nil)
            } else {
                print("Could not find JoinedSpaceViewController in storyboard.")
            }

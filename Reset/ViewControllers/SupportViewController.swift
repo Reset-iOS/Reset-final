@@ -132,4 +132,34 @@ extension SupportViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        guard let section = Section(rawValue: indexPath.section) else { return }
+        
+        switch section {
+        case .sponsors:
+            if indexPath.row != 0 { // Ensure it's not the "Add Section" cell
+                if let sponsor = viewModel.getSponsor() {
+                    let chatVC = ChatViewController()
+                    chatVC.configure(with: sponsor) // Pass the sponsor details to set title
+                    navigationController?.pushViewController(chatVC, animated: true)
+                }
+            }
+            
+        case .family:
+            if indexPath.row != 0 { // Ensure it's not the "Add Section" cell
+                let friends = viewModel.getFriends()
+                let selectedFriend = friends[indexPath.row - 1]
+                let chatVC = ChatViewController()
+                chatVC.configure(with: selectedFriend) // Pass the friend details to set title
+                navigationController?.pushViewController(chatVC, animated: true)
+            }
+            
+        case .emptyState:
+            // No action for empty state
+            break
+        }
+    }
 }

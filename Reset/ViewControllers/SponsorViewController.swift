@@ -47,6 +47,7 @@ extension ResultsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let selectedUser = users[indexPath.row]
         didSelectUser?(selectedUser) // Pass the selected user back to the SponsorViewController
     }
@@ -99,8 +100,12 @@ class SponsorViewController: UIViewController, UISearchResultsUpdating {
     }
 
     private func showDetailViewController(for user: User) {
-        let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailView") as! DetailViewController
-        detailVC.user = user // Pass the selected user to DetailViewController
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let detailVC = storyboard.instantiateViewController(withIdentifier: "DetailView") as? DetailViewController else {
+            print("Error: DetailViewController could not be instantiated.")
+            return
+        }
+        detailVC.user = user
         navigationController?.pushViewController(detailVC, animated: true)
     }
 }

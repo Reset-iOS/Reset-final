@@ -25,17 +25,30 @@ struct Sender: SenderType {
 class ChatViewController: MessagesViewController {
     
     // MARK: - Properties
+    var user: User?
     var messages: [Message] = []
     let selfSender = Sender(senderId: "self", displayName: "Me")
     let otherSender = Sender(senderId: "other", displayName: "John")
     
+    func configure(with user: User) {
+            self.user = user
+    }
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureMessageCollectionView()
         configureMessageInputBar()
         loadFirstMessages()
+        title = user?.name
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
+
     }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true) // Dismiss the keyboard
+    }
+    
     
     // MARK: - Configuration
     private func configureMessageCollectionView() {

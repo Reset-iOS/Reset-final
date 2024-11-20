@@ -11,11 +11,15 @@
 		2F08C51E2CEB02FD00F7E72A /* CHTCollectionViewWaterfallLayoutObjC in Frameworks */ = {isa = PBXBuildFile; productRef = 2F08C51D2CEB02FD00F7E72A /* CHTCollectionViewWaterfallLayoutObjC */; };
 		2F08C5282CEB07A100F7E72A /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F08C5272CEB07A100F7E72A /* HomeCollectionViewCell.swift */; };
 		2F08C5B42CEB459C00F7E72A /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2F08C5B32CEB459C00F7E72A /* MessageKit */; };
+		2F08C6542CEB980D00F7E72A /* BadgeCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F08C6532CEB980D00F7E72A /* BadgeCardCell.swift */; };
+		2F08C65A2CEC464D00F7E72A /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F08C6592CEC464D00F7E72A /* CustomTabBarController.swift */; };
 		4088C3B32CDB1A0100D8A4E3 /* profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4088C3B22CDB1A0100D8A4E3 /* profile.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2F08C5272CEB07A100F7E72A /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		2F08C6532CEB980D00F7E72A /* BadgeCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCardCell.swift; sourceTree = "<group>"; };
+		2F08C6592CEC464D00F7E72A /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		2F091C9B2CCFD8DB00F01080 /* Reset.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reset.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4088C3B22CDB1A0100D8A4E3 /* profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = profile.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +76,8 @@
 		2F091C922CCFD8DB00F01080 = {
 			isa = PBXGroup;
 			children = (
+				2F08C6592CEC464D00F7E72A /* CustomTabBarController.swift */,
+				2F08C6532CEB980D00F7E72A /* BadgeCardCell.swift */,
 				2F08C5272CEB07A100F7E72A /* HomeCollectionViewCell.swift */,
 				4088C3B22CDB1A0100D8A4E3 /* profile.storyboard */,
 				2F091C9D2CCFD8DB00F01080 /* Reset */,
@@ -170,6 +176,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F08C5282CEB07A100F7E72A /* HomeCollectionViewCell.swift in Sources */,
+				2F08C65A2CEC464D00F7E72A /* CustomTabBarController.swift in Sources */,
+				2F08C6542CEB980D00F7E72A /* BadgeCardCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

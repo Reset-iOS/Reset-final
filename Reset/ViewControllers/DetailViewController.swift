@@ -10,12 +10,33 @@ import UIKit
 class DetailViewController: UIViewController {
     var user: User?
     
+    @IBOutlet weak var profileImage: UIImageView!
     
+    @IBOutlet weak var streaks: UILabel!
+    @IBOutlet weak var userNameAndAge: UILabel!
+    @IBOutlet weak var soberSince: UILabel!
+    @IBOutlet weak var resets: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         print(user!)
         
+        let currentUser = DataManager.shared.getCurrentUser()
+        profileImage.image = UIImage(named: currentUser!.profileImage)
+        userNameAndAge.text = "\(currentUser?.name ?? "") (\(currentUser?.age ?? 0))"
+        if let soberSinceDate = currentUser?.soberSince {
+            let calendar = Calendar.current
+            let components = calendar.dateComponents([.weekOfYear], from: soberSinceDate, to: Date())
+            let weeks = components.weekOfYear ?? 0
+            soberSince.text = "\(weeks) weeks"
+        } else {
+            soberSince.text = "No date available"
+        }
+        resets.text = "\(currentUser?.resets ?? 0)"
+        streaks.text = "\(currentUser?.streak ?? 0)"
+        
+        profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
+        profileImage.clipsToBounds = true
         // Do any additional setup after loading the view.
     }
     

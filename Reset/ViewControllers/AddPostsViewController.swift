@@ -31,6 +31,12 @@ class AddPostsViewController: UIViewController, UIImagePickerControllerDelegate 
         
         placeHolderLabel.isHidden = !postTextView.text.isEmpty
         postTextView.delegate = self
+        let tapGesture2 = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture2)
+
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true) // Dismiss the keyboard
     }
     
     @objc func showImagePickerAlert() {

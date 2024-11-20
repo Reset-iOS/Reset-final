@@ -45,6 +45,7 @@ class FriendsResultsViewController: UIViewController, UITableViewDataSource, UIT
     }
 
     @objc(tableView:didSelectRowAtIndexPath:) func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let selectedUser = users[indexPath.row]
 
         // Show confirmation alert

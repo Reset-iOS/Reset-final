@@ -20,7 +20,7 @@ let mockUsers: [User] = [
         streak: 100,
         bloodGroup: "A+",
         sex: "Male",
-        profileImage: "shirts",
+        profileImage: "John",
         sponsorID: nil,
         friends: [user2ID, user3ID]
     ),
@@ -34,7 +34,7 @@ let mockUsers: [User] = [
         streak: 365,
         bloodGroup: "B+",
         sex: "Female",
-        profileImage: "shirts",
+        profileImage: "Jane",
         sponsorID: nil,
         friends: [user4ID, user5ID]
     ),
@@ -48,7 +48,7 @@ let mockUsers: [User] = [
         streak: 200,
         bloodGroup: "O+",
         sex: "Male",
-        profileImage: "shirts",
+        profileImage: "Michael",
         sponsorID: user1ID,
         friends: [user6ID]
     ),
@@ -62,7 +62,7 @@ let mockUsers: [User] = [
         streak: 150,
         bloodGroup: "AB-",
         sex: "Female",
-        profileImage: "shirts",
+        profileImage: "Emily",
         sponsorID: nil,
         friends: [user2ID, user6ID]
     ),
@@ -76,7 +76,7 @@ let mockUsers: [User] = [
         streak: 250,
         bloodGroup: "O-",
         sex: "Male",
-        profileImage: "shirts",
+        profileImage: "David",
         sponsorID: user3ID,
         friends: [user4ID]
     ),
@@ -90,7 +90,7 @@ let mockUsers: [User] = [
         streak: 300,
         bloodGroup: "A-",
         sex: "Female",
-        profileImage: "shirts",
+        profileImage: "Sophia",
         sponsorID: nil,
         friends: [user3ID, user5ID]
     )
@@ -102,7 +102,7 @@ let mockPosts: [Post] = [
         user: mockUsers[0],
         postDate: Date(timeIntervalSinceNow: -86400),  // 1 day ago
         postText: "Had an amazing day at the park!",
-        postImage: "shirts",
+        postImage: "post1",
         postLikes: 120,
         postComments: ["Looks fun!", "Wish I was there!", "Nice picture!"]
     ),
@@ -110,7 +110,7 @@ let mockPosts: [Post] = [
         user: mockUsers[1],
         postDate: Date(timeIntervalSinceNow: -172800), // 2 days ago
         postText: "Just started reading this new book, it's awesome!",
-        postImage: "shirts",
+        postImage: "post2",
         postLikes: 98,
         postComments: ["What book?", "Looks interesting!", "I want to read it too!"]
     ),
@@ -118,7 +118,7 @@ let mockPosts: [Post] = [
         user: mockUsers[2],
         postDate: Date(timeIntervalSinceNow: -259200), // 3 days ago
         postText: "Feeling proud of my progress!",
-        postImage: "shirts",
+        postImage: "post3",
         postLikes: 150,
         postComments: ["Keep going!", "So inspiring!", "Amazing work!"]
     ),
@@ -126,7 +126,7 @@ let mockPosts: [Post] = [
         user: mockUsers[3],
         postDate: Date(timeIntervalSinceNow: -345600), // 4 days ago
         postText: "Enjoying a peaceful evening with family.",
-        postImage: "shirts",
+        postImage: "post4",
         postLikes: 200,
         postComments: ["Family time is the best!", "Such a lovely picture!", "You all look great!"]
     ),
@@ -134,7 +134,7 @@ let mockPosts: [Post] = [
         user: mockUsers[4],
         postDate: Date(timeIntervalSinceNow: -432000), // 5 days ago
         postText: "Just finished a great workout!",
-        postImage: "shirts",
+        postImage: "post5",
         postLikes: 175,
         postComments: ["Way to go!", "You're killing it!", "I need to work out too!"]
     ),
@@ -142,7 +142,7 @@ let mockPosts: [Post] = [
         user: mockUsers[5],
         postDate: Date(timeIntervalSinceNow: -518400), // 6 days ago
         postText: "Had the best coffee this morning!",
-        postImage: "shirts",
+        postImage: "post6",
         postLikes: 85,
         postComments: ["Where did you get it?", "I love coffee!", "That looks delicious!"]
     )

@@ -22,11 +22,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     @IBOutlet weak var collectionView: UICollectionView!
     var dataSourceArray: [Item] = [
-        Item(type: .text, text: "Shirts", image: nil),
-        Item(type: .text, text: "Pants", image: nil),
-        Item(type: .text, text: "Shoes", image: nil),
-        Item(type: .text, text: "Hats", image: nil),
-        Item(type: .text, text: "Bags", image: nil)
+        Item(type: .text, text: "Keep going!", image: nil),
+        Item(type: .text, text: "Believe", image: nil)
     ]
 
     override func viewDidLoad() {
@@ -80,7 +77,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                 // Configure the cell with the item
         let item = dataSourceArray[indexPath.row]
         cell.configure(with: item)
-        cell.backgroundColor = .cyan
+        cell.backgroundColor = .gray
         return cell
     }
 
